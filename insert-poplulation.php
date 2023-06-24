@@ -38,8 +38,15 @@
     if (isset($_GET['submit'])) {
         require_once("./Config/main.php");
         $db = Db::getInstance();
-        
-        $record = $db->first("select * from hemayat where Year=140");
+        $year = $_GET['Year'];
+        $month = $_GET['Month'];
+        $record = $db->first("select * from hemayat where Year='$year' and Month='$month'");
+        if ($record) {
+            echo "already reg";
+        } else {
+            // $db->doquery();
+            echo "okkk";
+        }
     }
     ?>
     <div class="layer"></div>
@@ -83,16 +90,16 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="insert-poplulation.html">آمار جمعیتی</a>
+                                    <a href="insert-poplulation.php">آمار جمعیتی</a>
                                 </li>
                                 <li>
-                                    <a href="new-post.html"> آمار معیشت</a>
+                                    <a href="new-post.php"> آمار معیشت</a>
                                 </li>
                                 <li>
-                                    <a href="new-post.html">جهیزیه</a>
+                                    <a href="new-post.php">جهیزیه</a>
                                 </li>
                                 <li>
-                                    <a href="new-post.html">بیمه های اجتماعی</a>
+                                    <a href="new-post.php">بیمه های اجتماعی</a>
                                 </li>
                             </ul>
                         </li>
@@ -108,7 +115,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="categories.html">صندوق امدادولایت</a>
+                                    <a href="categories.php">صندوق امدادولایت</a>
                                 </li>
                             </ul>
                         </li>
@@ -124,7 +131,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="categories.html">فرهنگی</a>
+                                    <a href="categories.php">فرهنگی</a>
                                 </li>
                             </ul>
                         </li>
@@ -141,7 +148,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="media-01.html">ثبت آمار مسکن</a>
+                                    <a href="media-01.php">ثبت آمار مسکن</a>
                                 </li>
 
                             </ul>
@@ -156,13 +163,13 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="pages.html">ثبت آمار اشتغال</a>
+                                    <a href="pages.php">ثبت آمار اشتغال</a>
                                 </li>
 
                             </ul>
                         </li>
                         <li>
-                            <a href="comments.html">
+                            <a href="comments.php">
                                 <span class="icon message" aria-hidden="true"></span>
                                 نیروی انسانی
                             </a>
@@ -499,12 +506,24 @@
                     <div class="row">
                         <div class="col-lg-9">
 
-                            <form action="" class="insert-form p-5 rounded">
+                            <form action="" class="insert-form p-5 rounded" method="get">
                                 <div class="row">
-                                    <div class="col-md-6"><label for=""> سال:</label> <span>1402</span></div>
-                                    <div class="col-md-6"><label for=""> ماه مربوطه:</label> <span>تیر</span></div>
-                                </div>
-                                <div class="row">
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="input-group mb-2">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                            <input required name="Year" type="number" class="form-control" placeholder="سال">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="input-group mb-2">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-user"></i>
+                                            </span>
+                                            <input required name="Month" type="number" class="form-control" placeholder="ماه">
+                                        </div>
+                                    </div>
                                     <div class="col-md-6 col-lg-4">
                                         <div class="input-group mb-2">
                                             <span class="input-group-text">
