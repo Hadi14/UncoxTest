@@ -38,7 +38,8 @@
     if (isset($_GET['submit'])) {
         require_once("./Config/main.php");
         $db = Db::getInstance();
-        $record = $db->first("select * from hemayat where Year=");
+        
+        $record = $db->first("select * from hemayat where Year=140");
     }
     ?>
     <div class="layer"></div>
