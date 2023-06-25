@@ -57,10 +57,17 @@ class Db
     if ($result->num_rows == 0) {
       return null;
     }
+    // echo "<br>" . $result->num_rows . "<br>";
     while ($row = $result->fetch_assoc()) {
       $records[] = $row;
     }
     return $records;
+  }
+  /*********** Insert Query **************** */
+  public function insert($sql)
+  {
+    $id = $this->connect->query($sql);
+    return $id;
   }
 
 

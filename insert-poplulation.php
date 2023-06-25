@@ -38,26 +38,19 @@
     if (isset($_GET['submit'])) {
         require_once("./Config/main.php");
         $db = Db::getInstance();
-        $year = $_GET['Year'];
-        $month = $_GET['Month'];
-        $familycity = $_GET['familycity'];
-        $familyrural = $_GET['familyrural'];
-        $familymen = $_GET['familymen'];
-        $familywomen = $_GET['familywomen'];
-        $allfamily = $_GET['allfamily'];
-        $allpeople = $_GET['allfamily'];
-        $familyoldcity = $_GET['familyoldcity'];
-        $familyoldrural = $_GET['familyoldrural'];
-        $alloldfamily = $_GET['alloldfamily'];
-        $peopleoldcity = $_GET['peopleoldcity'];
-        $peopleoldrural = $_GET['peopleoldrural'];
-        $alloldpeople = $_GET['alloldpeople'];
+        $year = $_GET['Year']; //
+        $month = $_GET['Month']; //
+        $familycity = $_GET['familycity']; //
+        $familyrural = $_GET['familyrural']; //
+        $familymen = $_GET['familymen']; //
+        $familywomen = $_GET['familywomen']; //
+
         // add
         $record = $db->first("select * from hemayat where Year='$year' and Month='$month'");
         if ($record) {
             echo "already reg";
         } else {
-            $db->doquery("insert into hemayat  (Year,Month,Hmy_CityFamily, Hmy_RuralFamily, Hmy_MenFamily, Hmy_WomenFamily, Year, Month, Hmy_AllPeople) values ('$year','$month','$familycity','$familyrural','$familymen','$familywomen','$allfamily','$familyoldcity','$familyoldrural','$alloldfamily','$peopleoldcity','$peopleoldrural','$alloldpeople') ");
+            $db->insert("INSERT INTO hemayat (Year,Month,Hmy_CityFamily,Hmy_RuralFamily,Hmy_MenFamily,Hmy_WomenFamily) VALUES ('$year','$month','$familycity','$familyrural','$familymen','$familywomen') ");
             echo "okkk";
         }
     }
