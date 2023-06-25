@@ -51,7 +51,7 @@
             echo "already reg";
         } else {
             $db->insert("INSERT INTO hemayat (Year,Month,Hmy_CityFamily,Hmy_RuralFamily,Hmy_MenFamily,Hmy_WomenFamily) VALUES ('$year','$month','$familycity','$familyrural','$familymen','$familywomen') ");
-            echo "okkk";
+            echo "Record Added";
         }
     }
     ?>
