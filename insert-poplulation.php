@@ -48,7 +48,7 @@
         // add
         $record = $db->first("select * from hemayat where Year='$year' and Month='$month'");
         if ($record) {
-            echo "already reg";
+            echo "Already Registered";
         } else {
             $db->insert("INSERT INTO hemayat (Year,Month,Hmy_CityFamily,Hmy_RuralFamily,Hmy_MenFamily,Hmy_WomenFamily) VALUES ('$year','$month','$familycity','$familyrural','$familymen','$familywomen') ");
             echo "Record Added";
