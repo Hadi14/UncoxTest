@@ -19,7 +19,7 @@
 
 <body id="signin-body">
   <?
-  session_start();
+  require_once("./Config/main.php");
   if (isset($_SESSION['suname'])) {
     header("Location: index.php");
     echo  "Already logined";
@@ -34,7 +34,7 @@
     $record = $db->first("select * from users where user='$un'");
 
     if ($record && $record['password'] == $_GET['pass']) {
-      session_start();
+      // session_start();
       $_SESSION['suname'] = $un;
       header("Location: index.php");
     } else {

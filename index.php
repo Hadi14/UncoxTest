@@ -19,9 +19,10 @@
 </head>
 
 <body>
-<?
-
-?>
+    <?
+    require_once("./Config/main.php");
+    echo $_SESSION['suname'] . " " .  "عزیز خوش آمدید ";
+    ?>
     <div class="layer"></div>
     <!-- ! Body -->
     <a class="skip-link sr-only" href="#skip-target">Skip to content</a>

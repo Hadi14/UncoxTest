@@ -22,7 +22,7 @@
     // echo $result['Year'];
 
     require_once('./Config/main.php');
-    session_start();
+    // session_start();
     dump($_SESSION);
     $_SESSION['name'] = "hadi Hashemi";
 
