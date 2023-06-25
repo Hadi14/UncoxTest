@@ -52,7 +52,7 @@
         $peopleoldcity = $_GET['peopleoldcity'];
         $peopleoldrural = $_GET['peopleoldrural'];
         $alloldpeople = $_GET['alloldpeople'];
-
+        // add
         $record = $db->first("select * from hemayat where Year='$year' and Month='$month'");
         if ($record) {
             echo "already reg";
