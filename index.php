@@ -21,7 +21,12 @@
 <body>
     <?
     require_once("./Config/main.php");
-    echo $_SESSION['suname'] . " " .  "عزیز خوش آمدید ";
+    $guest = isset($_SESSION['suname']);
+    if ($guest) {
+        echo $_SESSION['suname'] . " " .  "عزیز خوش آمدید ";
+    } else {
+        echo "کاربر مهمان خوش آمدید";
+    }
     ?>
     <div class="layer"></div>
     <!-- ! Body -->
