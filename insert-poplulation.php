@@ -640,8 +640,18 @@
                             </form>
                         </div>
 
-
-
+                        <!--************************************************ show recodes -->
+                        <div class="table-content">
+                            <?
+                            require_once("./Config/main.php");
+                            $isges = !isset($_SESSION['suname']);
+                            $db = Db::getInstance();
+                            $us = $_SESSION['suname'];
+                            $records = $db->doquery("select * from hemayat where user='$us'");
+                            dump($records);
+                            ?>
+                        </div>
+                        <!--************************************************End show recodes -->
 
 
                         <div class="col-lg-3">

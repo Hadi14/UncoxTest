@@ -21,10 +21,16 @@
     // $result = $db->first("select * from hemayat", true);
     // echo $result['Year'];
 
-    require_once('./Config/main.php');
-    // session_start();
-    dump($_SESSION);
-    $_SESSION['name'] = "hadi Hashemi";
+
+
+    require_once("./Config/main.php");
+    $isges = !isset($_SESSION['suname']);
+    $db = Db::getInstance();
+    $us = $_SESSION['suname'];
+    $records = $db->doquery("select * from hemayat where user='$us'");
+    dump($records);
+
+
 
     ?>
 </body>
