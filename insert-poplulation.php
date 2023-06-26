@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="./css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/font.css">
-    <link rel="stylesheet" href="./css/Custome-style.css">
     <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/Custome-style.css">
     <style>
         .input-group::after {
             content: "*";
@@ -35,6 +35,8 @@
 
 <body>
     <?
+    require_once("./Config/main.php");
+    // $isgest = !isset($_SESSION['suname']);
     if (isset($_GET['submit'])) {
         require_once("./Config/main.php");
         $db = Db::getInstance();
@@ -644,11 +646,47 @@
                         <div class="table-content">
                             <?
                             require_once("./Config/main.php");
-                            $isges = !isset($_SESSION['suname']);
+
+                            // $isgest = !isset($_SESSION['suname']);
                             $db = Db::getInstance();
                             $us = $_SESSION['suname'];
                             $records = $db->doquery("select * from hemayat where user='$us'");
-                            dump($records);
+                            // echo $records[0]['Year'];
+                            ?>
+                            <table>
+                                <tr>
+                                    <th>سال</th>
+                                    <th>ماه</th>
+                                    <th>خانوار شهری</th>
+                                    <th>خانوار روستایی</th>
+                                    <th>سرپرست مرد</th>
+                                    <th>سرپرست زن</th>
+                                    <th>ویرایش</th>
+                                </tr>
+                                <? foreach ($records as $item) {
+                                    $y = $item['Year'];
+                                    $m = $item['Month'];
+                                ?>
+
+                                    <tr>
+                                        <td><?= $item['Year'] ?>
+                                        </td>
+                                        <td><?= $item['Month'] ?>
+                                        </td>
+                                        <td><?= $item['Hmy_CityFamily'] ?>
+                                        </td>
+                                        <td><?= $item['Hmy_RuralFamily'] ?>
+                                        </td>
+                                        <td><?= $item['Hmy_MenFamily'] ?>
+                                        </td>
+                                        <td><?= $item['Hmy_WomenFamily'] ?>
+                                        </td>
+                                        <td><a href="edit-population.php?year=" <?='$y' ?>"&month=" <?='$m' ?> > <i class=" bi bi-pencil-square"></i></a> </td>
+                                    </tr>
+                                <? } ?>
+                            </table>
+                            <? dump($records);
+                            // echo $records[0];
                             ?>
                         </div>
                         <!--************************************************End show recodes -->
