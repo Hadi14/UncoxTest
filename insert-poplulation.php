@@ -50,7 +50,8 @@
         if ($record) {
             echo "Already Registered";
         } else {
-            $db->insert("INSERT INTO hemayat (Year,Month,Hmy_CityFamily,Hmy_RuralFamily,Hmy_MenFamily,Hmy_WomenFamily) VALUES ('$year','$month','$familycity','$familyrural','$familymen','$familywomen') ");
+            $us = $_SESSION['suname'];
+            $db->insert("INSERT INTO hemayat (Year,Month,Hmy_CityFamily,Hmy_RuralFamily,Hmy_MenFamily,Hmy_WomenFamily,user) VALUES ('$year','$month','$familycity','$familyrural','$familymen','$familywomen','$us') ");
             echo "Record Added";
         }
     }
