@@ -307,7 +307,7 @@
                                         <i data-feather="settings" aria-hidden="true"></i>
                                         <span>تنظیمات</span>
                                     </a></li>
-                                <li><a class="danger" href="##">
+                                <li class="exitLi"><a class="danger" href="./logout.php">
                                         <i data-feather="log-out" aria-hidden="true"></i>
                                         <span>خروج</span>
                                     </a></li>
@@ -738,6 +738,7 @@
     <!-- Custom scripts -->
     <script src="js/script.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom-script.js"></script>
 </body>
 
 </html>
