@@ -30,7 +30,7 @@
     // $records = $db->doquery("select * from hemayat where user='$us'");
     // dump($records);
 
-    dump($_GET);
+    // dump($_GET);
     $y = $_GET['year'];
     $m = $_GET['month'];
 
