@@ -31,7 +31,12 @@
     // dump($records);
 
     dump($_GET);
+    $y = $_GET['year'];
+    $m = $_GET['month'];
 
+    $db = Db::getInstance();
+    $records = $db->doquery("select * from hemayat where Year='$y' and Month='$m'");
+    dump($records);
     ?>
 </body>
 
