@@ -24,13 +24,13 @@
 
 
     require_once("./Config/main.php");
-    $isges = !isset($_SESSION['suname']);
-    $db = Db::getInstance();
-    $us = $_SESSION['suname'];
-    $records = $db->doquery("select * from hemayat where user='$us'");
-    dump($records);
+    // $isges = !isset($_SESSION['suname']);
+    // $db = Db::getInstance();
+    // $us = $_SESSION['suname'];
+    // $records = $db->doquery("select * from hemayat where user='$us'");
+    // dump($records);
 
-
+    dump($_GET);
 
     ?>
 </body>
