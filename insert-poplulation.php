@@ -46,7 +46,7 @@
         $familyrural = $_GET['familyrural']; //
         $familymen = $_GET['familymen']; //
         $familywomen = $_GET['familywomen']; //
-
+        $c;
         // add
         $record = $db->first("select * from hemayat where Year='$year' and Month='$month'");
         if ($record) {
