@@ -683,7 +683,7 @@
                                         </td>
                                         <td><?= $item['Hmy_WomenFamily'] ?>
                                         </td>
-                                        <td><a href="edit-population.php?year=" <?= $keyfield ?>> <i class=" bi bi-pencil-square"></i></a> </td>
+                                        <td><a href="test.php?<?= $keyfield ?>"> <i class=" bi bi-pencil-square"></i></a> </td>
                                     </tr>
                                 <? } ?>
                             </table>

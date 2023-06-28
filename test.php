@@ -24,14 +24,19 @@
 
 
     require_once("./Config/main.php");
-    $isges = !isset($_SESSION['suname']);
+    // $isges = !isset($_SESSION['suname']);
+    // $db = Db::getInstance();
+    // $us = $_SESSION['suname'];
+    // $records = $db->doquery("select * from hemayat where user='$us'");
+    // dump($records);
+
+    // dump($_GET);
+    $y = $_GET['year'];
+    $m = $_GET['month'];
+
     $db = Db::getInstance();
-    $us = $_SESSION['suname'];
-    $records = $db->doquery("select * from hemayat where user='$us'");
+    $records = $db->doquery("select * from hemayat where Year='$y' and Month='$m'");
     dump($records);
-
-
-
     ?>
 </body>
 
